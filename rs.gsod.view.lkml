@@ -1,5 +1,5 @@
 view: rs_gsod {
-  sql_table_name: gsod.gsod ;;
+  sql_table_name: weather.gsod ;;
 
   dimension: station_id {
     type: string
