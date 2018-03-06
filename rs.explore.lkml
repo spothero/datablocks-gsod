@@ -1,14 +1,14 @@
 include: "rs.*.view"
 
-explore: gsod {
+explore: weather {
   from: rs_gsod
   join: zipcode_station {
     from: rs_zipcode_station
     view_label: "Geography"
     type: left_outer
     relationship: many_to_one
-    sql_on: ${gsod.station_id} = ${zipcode_station.nearest_station_id}
-      and ${gsod.year} = ${zipcode_station.year};;
+    sql_on: ${weather.station_id} = ${zipcode_station.nearest_station_id}
+      and ${weather.year} = ${zipcode_station.year};;
   }
   join: stations {
     from: rs_stations
