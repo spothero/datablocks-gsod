@@ -33,15 +33,3 @@ explore: weather {
     sql_on: ${zipcode_county.zipcode} = ${zipcode_facts.zipcode} ;;
   }
 }
-
-explore: weather_test {
-  from: rs_gsod
-  join: zipcode_station {
-    from: rs_zipcode_station
-    view_label: "Geography"
-    type: left_outer
-    relationship: many_to_one
-    sql_on: ${weather_test.station_id} = ${zipcode_station.nearest_station_id}
-      and ${weather_test.year} = ${zipcode_station.year};;
-  }
-}
